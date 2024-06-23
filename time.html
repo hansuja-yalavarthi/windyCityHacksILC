@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            line-height: calc(1em + 0.5rem);
+        }
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        input, button, textarea, select {
+            font: inherit;
+        }
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-rows: 10vh 80vh 10vh;
+            grid-template-areas:
+                "nav"
+                "main"
+                "footer";
+        }
+        .nav {
+            grid-area: nav;
+            background: #1b5e20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 80px;
+            box-shadow: 0px 17px 60px black;
+            z-index: 80000;
+        }
+        .nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .nav ul li {
+            margin-right: 20px;
+        }
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.7s, font-size 0.7s;
+        }
+        .main {
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+        }
+        .mainContentContainer {
+            width: 80vw;
+            height: 60vh;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:
+                "englishTutorOneContainer"
+                "englishTutorTwoContainer"
+                "englishTutorThreeContainer";
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .englishTutorOneContainer, .englishTutorTwoContainer, .englishTutorThreeContainer {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                "Top"
+                "Bottom";
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .englishTutorOneContainerTop, .englishTutorTwoContainerTop, .englishTutorThreeContainerTop {
+            grid-area: Top;
+        }
+        .englishTutorOneContainerBottom, .englishTutorTwoContainerBottom, .englishTutorThreeContainerBottom {
+            grid-area: Bottom;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .englishTutorOneContainer h1, .englishTutorTwoContainer h1, .englishTutorThreeContainer h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .englishTutorOneContainerBottom div, .englishTutorTwoContainerBottom div, .englishTutorThreeContainerBottom div {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .period-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .period-info h2 {
+            margin: 0 10px;
+        }
+        .footer {
+            grid-area: footer;
+            background: #1b5e20;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .footerTop {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 10px;
+        }
+        .footerTop .contactSocialMedia a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+        }
+        .footerNav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .footerNav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .peopleFooter div {
+            margin: 0 5px;
+        }
+        .footerDivider hr {
+            border-color: white;
+            width: 80%;
+        }
+        .footerBottom h3, .footerBottom h6 {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li class="Home"><a href="meetTheTutors.html">Meet the Tutors</a></li>
+                <li class="Schedule Appointment"><a href="schedule.html">Schedule Appointment</a></li>
+                <li class="Student Help Forum"><a href="forum.html">Forum</a></li>
+                <li class="Book a Room"><a href="rooms.html">Room Booking</a></li>
+                <li class="Contact"><a href="resources.html">Resources</a></li>
+                <li class="ContactForm"><a href="time.html">Contact Form</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="mainContentContainer">
+                <div class="englishTutorOneContainer">
+                    <div class="englishTutorOneContainerTop">
+                        <h1>Kendric Lamar</h1>
+                        <div id="schedule">
+                            <h1>School Bell Schedule</h1>
+                            <p>Current Period: <span id="current-period"></span></p>
+                            <p>Start Time: <span id="start-time"></span></p>
+                            <p>End Time: <span id="end-time"></span></p>
+                            <p>Time Remaining: <span id="timer"></span></p>
+                        </div>
+                    </div>
+                    <div class="englishTutorOneContainerBottom">
+                        <div class="period-info">
+                            <h2 class="ET1P1PeriodNum">1</h2>
+                            <h2 class="ET1P1PeriodStart">8:30</h2>
+                            <h2 class="ET1P1PeriodEnd">9:25</h2>
+                        </div>
+                        <div class="period-info">
+                            <h2 class="ET1P2PeriodNum">2</h2>
+                            <h2 class="ET1P2PeriodStart">9:25</h2>
+                            <h2 class="ET1P2PeriodEnd">10:15</h2>
+                        </div>
+                        <div class="period-info">
+                            <h2 class="ET1P3PeriodNum">3</h2>
+                            <h2 class="ET1P3PeriodStart">10:15</h2>
+                            <h2 class="ET1P3PeriodEnd">11:10</h2>
+                        </div>
+                        <div class="period-info">
+                            <h2 class="ET1P4PeriodNum">4</h2>
+                            <h2 class="ET1P4PeriodStart">11:10</h2>
+                            <h2 class="ET1P4PeriodEnd">11:55</h2>
+                        </div>
+                        <div class="period-info">
+                            <h2 class="ET1P5PeriodNum">5</h2>
+                            <h2 class="ET1P5PeriodStart">11:55</h2>
+                            <h2 class="ET1P5PeriodEnd">12:45</h2>
+                        </div>
+                    </div>
+                </div>
+                
+              
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerTop">
+                <div class="contactSocialMedia">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="meetTheTutors.html">Meet the Tutors</a></li>
+                    <li><a href="schedule.html">Schedule Appointment</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="rooms.html">Room Booking</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="time.html">Contact Form</a></li>
+                </ul>
+            </div>
+            <div class="footerDivider">
+                <hr>
+            </div>
+            <div class="footerBottom">
+                <h3>&copy; 2023 English Tutor Services</h3>
+                <h6>All rights reserved</h6>
+            </div>
+        </div>
+    </div>
+  <script>
+        // Define the periods with start and end times
+        var periods = [
+            { name: "Period 1", start: "08:30:00", end: "09:25:00" },
+            { name: "Period 2", start: "09:25:00", end: "10:15:00" },
+            { name: "Period 3", start: "10:15:00", end: "11:010:00" },
+            { name: "Period 4", start: "11:10:00", end: "11:55:00" },
+            { name: "Period 5", start: "11:55:00", end: "12:45:00" },
+  
+        ];
+
+        function getCurrentTime() {
+            return new Date().getTime();
+        }
+
+       
+        function parseTime(timeString) {
+            var now = new Date();
+            var timeParts = timeString.split(":");
+            var time = new Date(now.getFullYear(), now.getMonth(), now.getDate(), timeParts[0], timeParts[1], timeParts[2]);
+            return time.getTime();
+        }
+
+       
+        function updateTimer() {
+            var now = getCurrentTime();
+            var currentPeriod = null;
+
+            console.log("Current Time: " + new Date(now));  
+
+            
+            for (var i = 0; i < periods.length; i++) {
+                var periodStart = parseTime(periods[i].start);
+                var periodEnd = parseTime(periods[i].end);
+
+                console.log("Period " + periods[i].name + " Start: " + new Date(periodStart) + " End: " + new Date(periodEnd)); 
+
+                if (now >= periodStart && now <= periodEnd) {
+                    currentPeriod = periods[i];
+                    break;
+                }
+            }
+
+            if (currentPeriod) {
+                document.getElementById("current-period").innerHTML = currentPeriod.name;
+                document.getElementById("start-time").innerHTML = currentPeriod.start;
+                document.getElementById("end-time").innerHTML = currentPeriod.end;
+
+              
+                var periodEnd = parseTime(currentPeriod.end);
+                var distance = periodEnd - now;
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+                }
+            } else {
+                document.getElementById("current-period").innerHTML = "No Current Period";
+                document.getElementById("start-time").innerHTML = "--:--:--";
+                document.getElementById("end-time").innerHTML = "--:--:--";
+                document.getElementById("timer").innerHTML = "--:--:--";
+            }
+        }
+
+        
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>School Bell Schedule Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        #schedule {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        #schedule h1 {
+            margin-bottom: 20px;
+        }
+        #schedule p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="schedule">
+        <h1>School Bell Schedule</h1>
+        <p>Current Period: <span id="current-period"></span></p>
+        <p>Start Time: <span id="start-time"></span></p>
+        <p>End Time: <span id="end-time"></span></p>
+        <p>Time Remaining: <span id="timer"></span></p>
+    </div>
+
+    <script>
+        // Define the periods with start and end times
+        var periods = [
+            { name: "Period 1", start: "08:30:00", end: "09:25:00" },
+            { name: "Period 2", start: "09:25:00", end: "10:15:00" },
+            { name: "Period 3", start: "10:15:00", end: "11:010:00" },
+            { name: "Period 4", start: "11:10:00", end: "11:55:00" },
+            { name: "Period 5", start: "11:55:00", end: "12:45:00" },
+  
+        ];
+
+        function getCurrentTime() {
+            return new Date().getTime();
+        }
+
+       
+        function parseTime(timeString) {
+            var now = new Date();
+            var timeParts = timeString.split(":");
+            var time = new Date(now.getFullYear(), now.getMonth(), now.getDate(), timeParts[0], timeParts[1], timeParts[2]);
+            return time.getTime();
+        }
+
+       
+        function updateTimer() {
+            var now = getCurrentTime();
+            var currentPeriod = null;
+
+            console.log("Current Time: " + new Date(now));  
+
+            
+            for (var i = 0; i < periods.length; i++) {
+                var periodStart = parseTime(periods[i].start);
+                var periodEnd = parseTime(periods[i].end);
+
+                console.log("Period " + periods[i].name + " Start: " + new Date(periodStart) + " End: " + new Date(periodEnd)); 
+
+                if (now >= periodStart && now <= periodEnd) {
+                    currentPeriod = periods[i];
+                    break;
+                }
+            }
+
+            if (currentPeriod) {
+                document.getElementById("current-period").innerHTML = currentPeriod.name;
+                document.getElementById("start-time").innerHTML = currentPeriod.start;
+                document.getElementById("end-time").innerHTML = currentPeriod.end;
+
+              
+                var periodEnd = parseTime(currentPeriod.end);
+                var distance = periodEnd - now;
+
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    document.getElementById("timer").innerHTML = "EXPIRED";
+                }
+            } else {
+                document.getElementById("current-period").innerHTML = "No Current Period";
+                document.getElementById("start-time").innerHTML = "--:--:--";
+                document.getElementById("end-time").innerHTML = "--:--:--";
+                document.getElementById("timer").innerHTML = "--:--:--";
+            }
+        }
+
+        
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>-->

@@ -1,0 +1,209 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    background: #333;
+    justify-content: center;
+
+}
+
+.nav {
+  background: #1b5e20;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  
+  
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+  
+}
+
+.nav ul li {
+    margin: 0 15px;
+    justify-content: center;
+
+  
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  
+    justify-content: center;
+
+}
+
+.nav ul li a:hover {
+    text-decoration: underline;
+    justify-content: center;
+
+  
+}
+
+/* Container for the contact form */
+.contact-container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    justify-content: center;
+
+}
+
+/* Left side of the contact form */
+.contact-left {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title section of the form */
+.contact-left-title h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-left-title hr {
+    border: 0;
+    border-top: 2px solid #1b5e20;
+    width: 50px;
+    margin: 20px 0;
+}
+
+/* Input styles */
+.contact-inputs {
+    width: 100%; /* Ensure it takes up the full width */
+    padding: 15px; /* Adjust padding as needed */
+    margin: 10px 0; /* Adjust margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.contact-inputs:focus {
+    border-color: #1b5e20;
+    outline: none;
+}
+
+.contact-inputs::placeholder {
+    color: grey;
+}
+
+
+/* Button styles */
+button {
+    padding: 15px
+
+
+/** {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.contact-container
+{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-evenly;
+}
+.contact-left
+{
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  gap:20px;
+  
+}
+.contact-left-title h2
+{
+  font-weight:600;
+  font-size:40px;
+  color:pink;
+  margin-bottom:5px;
+}
+
+.contact-left-title hr
+{
+  border:none;
+  width:120px;
+  height:5px;
+
+  color:pink;
+  margin-bottom:20px;
+}
+
+.contact-inputs
+{
+  width:400px;
+  height:50px;
+  border:none;
+  outline:none;
+  padding-left:25px;
+  font-weight:500;
+  color:red;
+}
+
+.contact-left textarea
+{
+  height:140px;
+  padding-top:15px;
+}
+
+.contact-inputs::focus
+{
+  border:2px solid orange;
+}
+.contact-inputs::placeholder
+{
+  color:grey;
+}
+*/

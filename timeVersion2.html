@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        line-height: calc(1em + 0.5rem);
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-rows: 10vh 90vh;
+        grid-template-areas:
+          "nav"
+          "main";
+      }
+      .nav {
+        grid-area: nav;
+        background: #1b5e20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 80px;
+        box-shadow: 0px 17px 60px black;
+        z-index: 80000;
+      }
+
+      .nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .nav ul li {
+        margin-right: 20px;
+      }
+
+      .nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.7s, font-size 0.7s;
+      }
+
+      .main {
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .mainContentContainer {
+        width: 80vw;
+        height: 60vh;
+        display: grid;
+        grid-template-rows: 20vh 20vh 20vh;
+        grid-template-areas:
+          "englishTutorOneContainer"
+          "englishTutorTwoContainer"
+          "englishTutorThreeContainer";
+        background: green;
+      }
+      .englishTutorOneContainer,
+      .englishTutorTwoContainer,
+      .englishTutorThreeContainer {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+          "Top"
+          "Bottom";
+        background: gold;
+        border: 2px solid black;
+        border-radius: 20px;
+        padding:10px;
+      }
+
+      .englishTutorThreeContainerTop {
+        grid-area: Top;
+        background: pink;
+      }
+      .englishTutorThreeContainerBottom {
+        grid-area: Bottom;
+        display: flex;
+        justify-content: space-between;
+        
+        font-size: 12px;
+      }
+      .ET3P1
+      {background:green;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+         width:90px;
+        border-radius:7px;
+      }
+      .ET3P2
+      {background:green;
+         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        width:90px;
+         border-radius:7px;
+      }
+      .ET3P3
+      {background:green;
+         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+         width:90px;
+         border-radius:7px;
+      }
+      .ET3P4
+      {background:green;
+         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+         width:90px;
+         border-radius:7px;
+      }
+      .ET3P5
+      {background:green;
+         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+         width:90px;
+         border-radius:7px;
+      }
+      
+
+      .englishTutorOneContainerTop,
+      .englishTutorTwoContainerTop {
+        grid-area: Top;
+      }
+      .englishTutorOneContainerBottom,
+      .englishTutorTwoContainerBottom {
+        grid-area: Bottom;
+        display: flex;
+        justify-content: space-between;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <ul>
+          <li class="Home"><a href="meetTheTutors.html">Meet the Tutors</a></li>
+          <li class="Schedule Appointment">
+            <a href="schedule.html">Schedule Appointment</a>
+          </li>
+          <li class="Student Help Forum"><a href="forum.html">Forum</a></li>
+          <li class="Book a Room"><a href="rooms.html">Room Booking</a></li>
+          <li class="Contact"><a href="resources.html">Resources</a></li>
+          <li class="ContactForm"><a href="time.html">Contact Form</a></li>
+        </ul>
+      </div>
+      <div class="main">
+        <div class="mainContentContainer">
+          <div class="englishTutorOneContainer">
+            <div class="englishTutorOneContainerTop">
+              <h1>Nicole Andruszko</h1>
+              <div id="schedule">
+                <h1>School Bell Schedule</h1>
+                <p>Current Period: <span id="current-period"></span></p>
+                <p>Start Time: <span id="start-time"></span></p>
+                <p>End Time: <span id="end-time"></span></p>
+                <p>Time Remaining: <span id="timer"></span></p>
+              </div>
+            </div>
+            <div class="englishTutorOneContainerBottom">
+              <div class="ET1P1">
+                <h2 class="ET1P1PeriodNum">1</h2>
+                <h2 class="ET1P1PeriodStart">8:30</h2>
+                <h2 class="ET1P1PeriodEnd">9:25</h2>
+              </div>
+              <div class="ET1P2">
+                <h2 class="ET1P2PeriodNum">2</h2>
+                <h2 class="ET1P2PeriodStart">9:25</h2>
+                <h2 class="ET1P2PeriodEnd">10:15</h2>
+              </div>
+              <div class="ET1P3">
+                <h2 class="ET1P3PeriodNum">3</h2>
+                <h2 class="ET1P3PeriodStart">10:15</h2>
+                <h2 class="ET1P3PeriodEnd">11:10</h2>
+              </div>
+              <div class="ET1P4">
+                <h2 class="ET1P4PeriodNum">4</h2>
+                <h2 class="ET1P4PeriodStart">11:10</h2>
+                <h2 class="ET1P4PeriodEnd">11:55</h2>
+              </div>
+              <div class="ET1P5">
+                <h2 class="ET1P5PeriodNum">5</h2>
+                <h2 class="ET1P5PeriodStart">11:57</h2>
+                <h2 class="ET1P5PeriodEnd">12:00</h2>
+              </div>
+            </div>
+          </div>
+          <div class="englishTutorTwoContainer">
+            <div class="englishTutorTwoContainerTop">
+              <h1>Kelly Kaplan</h1>
+              <div id="schedule2"></div>
+            </div>
+            <div class="englishTutorTwoContainerBottom">
+              <div class="ET2P1">
+                <h2 class="ET2P1PeriodNum">1</h2>
+                <h2 class="ET2P1PeriodStart">8:30</h2>
+                <h2 class="ET2P1PeriodEnd">9:25</h2>
+              </div>
+              <div class="ET2P2">
+                <h2 class="ET2P2PeriodNum">2</h2>
+                <h2 class="ET2P2PeriodStart">9:25</h2>
+                <h2 class="ET2P2PeriodEnd">10:15</h2>
+              </div>
+              <div class="ET2P3">
+                <h2 class="ET2P3PeriodNum">3</h2>
+                <h2 class="ET2P3PeriodStart">10:15</h2>
+                <h2 class="ET2P3PeriodEnd">11:10</h2>
+              </div>
+              <div class="ET2P4">
+                <h2 class="ET2P4PeriodNum">4</h2>
+                <h2 class="ET2P4PeriodStart">11:10</h2>
+                <h2 class="ET2P4PeriodEnd">11:55</h2>
+              </div>
+              <div class="ET2P5">
+                <h2 class="ET2P5PeriodNum">5</h2>
+                <h2 class="ET2P5PeriodStart">11:57</h2>
+                <h2 class="ET2P5PeriodEnd">12:00</h2>
+              </div>
+            </div>
+          </div>
+          <div class="englishTutorThreeContainer">
+            <div class="englishTutorThreeContainerTop">
+              <h1>Simonetta Kentish</h1>
+              <div id="schedule3"></div>
+            </div>
+            <div class="englishTutorThreeContainerBottom">
+              <div class="ET3P1">
+                <h2 class="ET3P1PeriodNum">1</h2>
+                <h2 class="ET3P1PeriodStart">8:30</h2>
+                <h2 class="ET3P1PeriodEnd">9:25</h2>
+              </div>
+              <div class="ET3P2">
+                <h2 class="ET3P2PeriodNum">2</h2>
+                <h2 class="ET3P2PeriodStart">9:25</h2>
+                <h2 class="ET3P2PeriodEnd">10:15</h2>
+              </div>
+              <div class="ET3P3">
+                <h2 class="ET3P3PeriodNum">3</h2>
+                <h2 class="ET3P3PeriodStart">10:15</h2>
+                <h2 class="ET3P3PeriodEnd">11:10</h2>
+              </div>
+              <div class="ET3P4">
+                <h2 class="ET3P4PeriodNum">4</h2>
+                <h2 class="ET3P4PeriodStart">11:10</h2>
+                <h2 class="ET3P4PeriodEnd">11:55</h2>
+              </div>
+              <div class="ET3P5">
+                <h2 class="ET3P5PeriodNum">5</h2>
+                <h2 class="ET3P5PeriodStart">11:57</h2>
+                <h2 class="ET3P5PeriodEnd">12:00</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footerTop">
+        <div class="contactSocialMedia">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-snapchat"></a>
+        </div>
+        <div class="footerNav">
+          <ul>
+            <li class="Home"><a href="donorHomePage">PhilaConnect</a></li>
+            <li class="About"><a href="about.html">About</a></li>
+            <li class="Charity"><a href="charity.html">Charity</a></li>
+            <li class="Contact"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="peopleFooter">
+          <div>Hansuja</div>
+          <div>|</div>
+          <div>Ira</div>
+        </div>
+      </div>
+      <div class="footerDivider">
+        <hr />
+      </div>
+      <div class="footerBottom">
+        <h3>1 Stevenson Dr, Lincolnshire, IL 60069</h3>
+        <h6>@ Kitchen Coders | All Rights Reserved</h6>
+      </div>
+    </footer>
+    <script>
+      // Define the periods with start and end times
+      var periods = [
+        { name: "Period 1", start: "08:30:00", end: "09:25:00" },
+        { name: "Period 2", start: "09:25:00", end: "10:15:00" },
+        { name: "Period 3", start: "10:15:00", end: "11:10:00" },
+        { name: "Period 4", start: "11:10:00", end: "11:55:00" },
+        { name: "Period 5", start: "11:55:00", end: "12:45:00" },
+      ];
+
+      function getCurrentTime() {
+        return new Date().getTime();
+      }
+
+      function parseTime(timeString) {
+        var now = new Date();
+        var timeParts = timeString.split(":");
+        var time = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+          timeParts[0],
+          timeParts[1],
+          timeParts[2]
+        );
+        return time.getTime();
+      }
+
+      function updateTimer() {
+        var now = getCurrentTime();
+        var currentPeriod = null;
+
+        console.log("Current Time: " + new Date(now));
+
+        for (var i = 0; i < periods.length; i++) {
+          var periodStart = parseTime(periods[i].start);
+          var periodEnd = parseTime(periods[i].end);
+
+          console.log(
+            "Period " +
+              periods[i].name +
+              " Start: " +
+              new Date(periodStart) +
+              " End: " +
+              new Date(periodEnd)
+          );
+
+          if (now >= periodStart && now <= periodEnd) {
+            currentPeriod = periods[i];
+            break;
+          }
+        }
+
+        if (currentPeriod) {
+          document.getElementById("current-period").innerHTML =
+            currentPeriod.name;
+          document.getElementById("start-time").innerHTML = currentPeriod.start;
+          document.getElementById("end-time").innerHTML = currentPeriod.end;
+
+          var periodEnd = parseTime(currentPeriod.end);
+          var distance = periodEnd - now;
+
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("timer").innerHTML =
+            hours + "h " + minutes + "m " + seconds + "s ";
+
+          if (distance < 0) {
+            document.getElementById("timer").innerHTML = "EXPIRED";
+          }
+        } else {
+          document.getElementById("current-period").innerHTML =
+            "No Current Period";
+          document.getElementById("start-time").innerHTML = "--:--:--";
+          document.getElementById("end-time").innerHTML = "--:--:--";
+          document.getElementById("timer").innerHTML = "--:--:--";
+        }
+      }
+
+      setInterval(updateTimer, 1000);
+    </script>
+  </body>
+</html>

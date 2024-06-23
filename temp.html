@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+<body>
+
+<h2>HTML Forms</h2>
+
+<form action="/action_page.php">
+  <label for="class">Class</label><br>
+  <input type="text" id="class" name="class" value="AP Calc BC"><br>
+  <label for="question">Question</label><br>
+  <input type="text" id="question" name="question" value="What is a derivative?"><br><br>
+</form>
+
+  <button onclick="query()" type="button">
+    Submit
+  </button>
+  
+</body>
+
+  <script>
+    var data3 = XLSX.utils.book_new();
+   function query () {
+    var data = {
+      id: document.getElementById('class').value,
+      question: document.getElementById('question').value
+    };
+    var data2 = [["id", "question"], [data.id, data.question]];
+    var data4 = XLSX.utils.aoa_to_sheet(data2);
+    XLSX.utils.book_append_sheet(data3, data4, "query");
+    XLSX.writeFile(data3, "forum.xlsx")
+   }
+  </script>
+
+</html>
+

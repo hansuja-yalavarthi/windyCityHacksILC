@@ -1,0 +1,1069 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: calc(1em + 0.5rem);
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/******************************************************************************
+CSS
+******************************************************************************/
+body {
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  height: max-content;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 10vh 90vh 357vh 217vh 287vh 147vh 77vh;
+  grid-template-areas:
+    "nav"
+    "main"
+    "mathContainer"
+    "englishContainer"
+    "scienceContainer"
+    "socialStudiesContainer"
+    "languagesContainer"; 
+}
+.nav {
+  grid-area: nav;
+  background: #1b5e20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+  box-shadow: 0px 17px 60px black;
+  z-index: 80000;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.7s, font-size 0.7s;
+}
+
+/*//////////////////////////////////////////////////////////////*/
+/*                    Math Container                            */
+/*//////////////////////////////////////////////////////////////*/
+.mathContainer {
+  grid-area: mathContainer;
+  display: grid;
+  grid-template-rows: 7vh 70vh 70vh 70vh 70vh 70vh;
+  grid-template-areas:
+    "mathBorder"
+    "mathTutorOne"
+    "mathTutorTwo"
+    "mathTutorThree"
+    "mathTutorFour"
+    "mathTutorFive";
+}
+
+.mathBorder {
+  grid-area: mathBorder;
+  background: #1b5e20;
+   border-top: black 3px solid;
+    border-bottom:black 3px solid;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.mathTutorOne {
+  grid-area: mathTutorOne;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "mathTutorOnetextSide mathTutorOneimageSide";
+}
+.mathTutorTwo {
+  grid-area: mathTutorTwo;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "mathTutorTwoimageSide mathTutorTwotextSide";
+}
+.mathTutorThree {
+  grid-area: mathTutorThree;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "mathTutorThreetextSide mathTutorThreeimageSide";
+}
+.mathTutorFour {
+  grid-area: mathTutorFour;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "mathTutorFourimageSide mathTutorFourtextSide";
+}
+.mathTutorFive {
+  grid-area: mathTutorFive;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "mathTutorFivetextSide mathTutorFiveimageSide";
+}
+.mathTutorOneTextSide 
+{
+  grid-area:mathTutorOnetextSide ;
+  display:flex;
+   flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+   padding:40px;
+}
+.mathTutorTwoTextSide 
+{
+  grid-area:mathTutorTwotextSide ;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+
+  padding:40px;
+}
+.mathTutorThreeTextSide 
+{
+  grid-area:mathTutorThreetextSide 
+    ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+}
+.mathTutorFourTextSide 
+{
+  grid-area:mathTutorFourtextSide ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+}
+.mathTutorFiveTextSide 
+{
+  grid-area:mathTutorFivetextSide ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+  
+  padding:40px;
+}
+.mathTutorOneTextSide h1
+{
+  color:#1b5e20;
+  margin-block:10px;
+}
+
+.mathTutorTwoTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.mathTutorThreeTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.mathTutorFourTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.mathTutorFiveTextSide h1
+
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+
+
+.mathTutorOneImageSide 
+{
+  grid-area:mathTutorOneimageSide;
+  background:url("https://media.gettyimages.com/id/1356299009/photo/studio-portrait-of-a-senior-asian-woman-standing-in-front-of-green-screen.jpg?s=612x612&w=0&k=20&c=lPFz6QJsICIrthLpMGWTOsnytrJh_nRCSy10Gnqwevg=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+.mathTutorTwoImageSide 
+{
+  grid-area:mathTutorTwoimageSide;
+  background:url("https://media.gettyimages.com/id/1351541214/photo/portrait-of-a-little-boy-on-green-background-with-plaid-shirt.jpg?s=612x612&w=0&k=20&c=cnnaYDDz6chwdcqQDNIY05HKX7FkONkUb3ad5h4sGYY=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.mathTutorThreeImageSide 
+{
+  grid-area:mathTutorThreeimageSide;
+  background:url("https://media.gettyimages.com/id/1351541763/photo/60-year-old-man-with-arabic-features-bald-and-with-goatee-poses-in-portrait-on-green.jpg?s=612x612&w=0&k=20&c=1VSJQN5bRqrwPtw25rEcUP3mhMmpCOt0fIAqB8-XEzY=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.mathTutorFourImageSide 
+{
+  grid-area:mathTutorFourimageSide;
+  background:url("https://media.gettyimages.com/id/119337395/photo/yawn.jpg?s=612x612&w=0&k=20&c=Nj1FH3Vwz7Epczm2CJZ24hbGdhm94L1xcBew9o2aZPk=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.mathTutorFiveImageSide 
+{
+  grid-area:mathTutorFiveimageSide;
+  background:url("https://media.gettyimages.com/id/1351541214/photo/portrait-of-a-little-boy-on-green-background-with-plaid-shirt.jpg?s=612x612&w=0&k=20&c=cnnaYDDz6chwdcqQDNIY05HKX7FkONkUb3ad5h4sGYY=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+/*//////////////////////////////////////////////////////////////*/
+/*                    English Container                         */
+/*//////////////////////////////////////////////////////////////*/
+.englishContainer {
+  grid-area: englishContainer;
+  display: grid;
+  grid-template-rows: 7vh 70vh 70vh 70vh;
+  grid-template-areas:
+    "englishBorder"
+    "englishTutorOne"
+    "englishTutorTwo"
+    "englishTutorThree";
+  
+}
+
+.englishBorder {
+  grid-area: englishBorder;
+   background: #1b5e20;
+   border-top: black 3px solid;
+    border-bottom:black 3px solid;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.englishTutorOne {
+  grid-area: englishTutorOne;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: " englishTutorOneimageSide englishTutorOnetextSide";
+}
+.englishTutorTwo {
+  grid-area: englishTutorTwo;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: " englishTutorTwotextSide englishTutorTwoimageSide ";
+}
+.englishTutorThree {
+  grid-area: englishTutorThree;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "englishTutorThreeimageSide englishTutorThreetextSide ";
+}
+
+
+
+
+
+
+.englishTutorOneTextSide 
+{
+  grid-area:englishTutorOnetextSide ;
+  display:flex;
+   flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+   padding:40px;
+}
+.englishTutorTwoTextSide 
+{
+  grid-area:englishTutorTwotextSide ;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+
+  padding:40px;
+}
+.englishTutorThreeTextSide 
+{
+  grid-area:englishTutorThreetextSide 
+    ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+}
+
+.englishTutorOneTextSide h1
+{
+  color:#1b5e20;
+  margin-block:10px;
+}
+
+.englishTutorTwoTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.englishTutorThreeTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+
+.englishTutorOneImageSide 
+{
+  grid-area:englishTutorOneimageSide;
+  background:url("https://media.gettyimages.com/id/119337395/photo/yawn.jpg?s=612x612&w=0&k=20&c=Nj1FH3Vwz7Epczm2CJZ24hbGdhm94L1xcBew9o2aZPk=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+.englishTutorTwoImageSide 
+{
+  grid-area:englishTutorTwoimageSide;
+  background:url("https://media.gettyimages.com/id/1346542241/photo/cheerful-redhead-woman-in-green-dress-in-studio.jpg?s=612x612&w=0&k=20&c=J3uQbL28IqdBq2p5MlHlBXWTpU6kLZs3m8Sx_TKuaWA=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.englishTutorThreeImageSide 
+{
+  grid-area:englishTutorThreeimageSide;
+  background:url("https://media.gettyimages.com/id/170258433/photo/shocked.jpg?s=612x612&w=0&k=20&c=8Pzq7wabHYganA6XJ9BEUKg6RKA18zc7Wep7_ir1MSc=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////*/
+/*                    Science Container                         */
+/*//////////////////////////////////////////////////////////////*/
+.scienceContainer {
+  grid-area: scienceContainer;
+  display: grid;
+  grid-template-rows: 7vh 70vh 70vh 70vh 70vh;
+  grid-template-areas:
+    "scienceBorder"
+    "scienceTutorOne"
+    "scienceTutorTwo"
+    "scienceTutorThree"
+    "scienceTutorFour";
+  
+  
+}
+
+.scienceBorder {
+  grid-area: scienceBorder;
+ background: #1b5e20;
+   border-top: black 3px solid;
+    border-bottom:black 3px solid;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.scienceTutorOne {
+  grid-area: scienceTutorOne;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "scienceTutorOnetextSide scienceTutorOneimageSide";
+}
+.scienceTutorTwo {
+  grid-area: scienceTutorTwo;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "scienceTutorTwoimageSide scienceTutorTwotextSide";
+}
+.scienceTutorThree {
+  grid-area: scienceTutorThree;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "scienceTutorThreetextSide scienceTutorThreeimageSide";
+}
+.scienceTutorFour {
+  grid-area: scienceTutorFour;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "scienceTutorFourimageSide scienceTutorFourtextSide";
+}
+
+
+
+.scienceTutorOneTextSide 
+{
+  grid-area:scienceTutorOnetextSide ;
+  display:flex;
+   flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+   padding:40px;
+}
+.scienceTutorTwoTextSide 
+{
+  grid-area:scienceTutorTwotextSide ;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+
+  padding:40px;
+}
+.scienceTutorThreeTextSide 
+{
+  grid-area:scienceTutorThreetextSide 
+    ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+}
+.scienceTutorFourTextSide 
+{
+  grid-area:scienceTutorFourtextSide ;
+  display:flex;
+   flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+}
+
+.scienceTutorOneTextSide h1
+{
+  color:#1b5e20;
+  margin-block:10px;
+}
+
+.scienceTutorTwoTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.scienceTutorThreeTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+.scienceTutorFourTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+
+
+.scienceTutorOneImageSide 
+{
+  grid-area:scienceTutorOneimageSide;
+  background:url("https://media.gettyimages.com/id/1351541763/photo/60-year-old-man-with-arabic-features-bald-and-with-goatee-poses-in-portrait-on-green.jpg?s=612x612&w=0&k=20&c=1VSJQN5bRqrwPtw25rEcUP3mhMmpCOt0fIAqB8-XEzY=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+.scienceTutorTwoImageSide 
+{
+  grid-area:scienceTutorTwoimageSide;
+  background:url("https://media.gettyimages.com/id/1351541214/photo/portrait-of-a-little-boy-on-green-background-with-plaid-shirt.jpg?s=612x612&w=0&k=20&c=cnnaYDDz6chwdcqQDNIY05HKX7FkONkUb3ad5h4sGYY=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+.scienceTutorThreeImageSide 
+{
+  grid-area:scienceTutorThreeimageSide;
+  background:url("https://media.gettyimages.com/id/1346542233/photo/amazed-redhead-woman-looking-at-camera-on-green-background.jpg?s=612x612&w=0&k=20&c=j_W1Mq9KrYaiYktQCRzk5ayuDbKxLscwNCymbh_mYKQ=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.scienceTutorFourImageSide 
+{
+  grid-area:scienceTutorFourimageSide;
+  background:url("https://media.gettyimages.com/id/1356299009/photo/studio-portrait-of-a-senior-asian-woman-standing-in-front-of-green-screen.jpg?s=612x612&w=0&k=20&c=lPFz6QJsICIrthLpMGWTOsnytrJh_nRCSy10Gnqwevg=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////*/
+/*                    Social Studies Container                  */
+/*//////////////////////////////////////////////////////////////*/
+.socialStudiesContainer {
+  grid-area: socialStudiesContainer;
+  display: grid;
+  grid-template-rows: 7vh 70vh 70vh;
+  grid-template-areas:
+    "socialStudiesBorder"
+    "socialStudiesTutorOne"
+    "socialStudiesTutorTwo";
+}
+
+.socialStudiesBorder {
+  grid-area: socialStudiesBorder;
+  background: #1b5e20;
+   border-top: black 3px solid;
+    border-bottom:black 3px solid;
+   display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.socialStudiesTutorOne {
+  grid-area: socialStudiesTutorOne;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: "socialStudiesTutorOnetextSide socialStudiesTutorOneimageSide";
+}
+.socialStudiesTutorTwo {
+  grid-area: socialStudiesTutorTwo;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: " socialStudiesTutorTwoimageSide socialStudiesTutorTwotextSide ";
+}
+
+
+
+
+.socialStudiesTutorOneTextSide 
+{
+  grid-area:socialStudiesTutorOnetextSide ;
+  display:flex;
+   flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+   padding:40px;
+}
+.socialStudiesTutorTwoTextSide 
+{
+  grid-area:socialStudiesTutorTwotextSide ;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  justify-content:center;
+
+  padding:40px;
+}
+
+.socialStudiesTutorOneTextSide h1
+{
+  color:#1b5e20;
+  margin-block:10px;
+}
+
+.socialStudiesTutorTwoTextSide h1
+{
+  color:#1b5e20;
+    margin-block:10px;
+}
+
+.socialStudiesTutorOneImageSide 
+{
+  grid-area:socialStudiesTutorOneimageSide;
+  background:url("https://media.gettyimages.com/id/119337395/photo/yawn.jpg?s=612x612&w=0&k=20&c=Nj1FH3Vwz7Epczm2CJZ24hbGdhm94L1xcBew9o2aZPk=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+.socialStudiesTutorTwoImageSide 
+{
+  grid-area:socialStudiesTutorTwoimageSide;
+  background:url("https://media.gettyimages.com/id/1346542241/photo/cheerful-redhead-woman-in-green-dress-in-studio.jpg?s=612x612&w=0&k=20&c=J3uQbL28IqdBq2p5MlHlBXWTpU6kLZs3m8Sx_TKuaWA=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////*/
+/*                    Languages Container                       */
+/*//////////////////////////////////////////////////////////////*/
+.languagesContainer {
+  grid-area: languagesContainer;
+  display: grid;
+  grid-template-rows: 7vh 70vh;
+  grid-template-areas:
+    "languagesBorder"
+    "languagesTutorOne";
+}
+
+.languagesBorder {
+  grid-area: languagesBorder;
+   background: #1b5e20;
+   border-top: black 3px solid;
+    border-bottom:black 3px solid;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.languagesTutorOne {
+  grid-area: languagesTutorOne;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-areas: " languagesTutorOnetextSide languagesTutorOneimageSide";
+}
+.languagesTutorOneTextSide 
+{
+  grid-area:languagesTutorOnetextSide ;
+  display:flex;
+   flex-direction:column;
+
+  justify-content:center;
+  align-items:center;
+   padding:40px;
+}
+
+.languagesTutorOneTextSide h1
+{
+  color:#1b5e20;
+  margin-block:10px;
+}
+
+
+
+.languagesTutorOneImageSide 
+{
+  grid-area:languagesTutorOneimageSide;
+  background:url("https://media.gettyimages.com/id/1356299009/photo/studio-portrait-of-a-senior-asian-woman-standing-in-front-of-green-screen.jpg?s=612x612&w=0&k=20&c=lPFz6QJsICIrthLpMGWTOsnytrJh_nRCSy10Gnqwevg=");
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+
+
+
+
+
+
+
+.main
+{
+  grid-area:main;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+.animate {
+  font-size: 50px;
+  margin-block:30px;
+
+}
+
+.animate span {
+  display: inline-block;
+}
+
+.animate span:nth-of-type(2) { animation-delay: .05s; }
+.animate span:nth-of-type(3) { animation-delay: .1s; }
+.animate span:nth-of-type(4) { animation-delay: .15s; }
+.animate span:nth-of-type(5) { animation-delay: .2s; }
+.animate span:nth-of-type(6) { animation-delay: .25s; }
+.animate span:nth-of-type(7) { animation-delay: .3s; }
+.animate span:nth-of-type(8) { animation-delay: .35s; }
+.animate span:nth-of-type(9) { animation-delay: .4s; }
+.animate span:nth-of-type(10) { animation-delay: .45s; }
+.animate span:nth-of-type(11) { animation-delay: .5s; }
+.animate span:nth-of-type(12) { animation-delay: .55s; }
+.animate span:nth-of-type(13) { animation-delay: .6s; }
+.animate span:nth-of-type(14) { animation-delay: .65s; }
+.animate span:nth-of-type(15) { animation-delay: .7s; }
+.animate span:nth-of-type(16) { animation-delay: .75s; }
+.animate span:nth-of-type(17) { animation-delay: .8s; }
+.animate span:nth-of-type(18) { animation-delay: .85s; }
+
+.three span {
+  color: #1b5e20;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  animation: sideSlide .5s forwards;
+}
+
+@keyframes sideSlide {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: #1b5e20;
+  }
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: #1b5e20;
+  }
+  99% {
+    transform: translate(0) scale(1.2);
+    color: #b38825;
+  }
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: #1b5e20;
+  }
+}
+
+
+
+
+
+
+
+
+.buttonContainer
+{
+  width:1000px;
+  height:45px;
+
+  display:flex;
+}
+
+button
+{
+  width:170px;
+  height:100%;
+  background:#1b5e20;
+  border:none;
+  border-radius:24px;
+
+}
+button:hover
+{
+  background:#b38825;
+}
+
+.buttonContainer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttonCOntainer ul li {
+  margin-right: 20px;
+}
+
+.buttonContainer ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.7s, font-size 0.7s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+h2 {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #1b5e20, white, #1b5e20);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(27, 94, 32, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+
+
+
+/******************************************************************************
+Footer BElow
+******************************************************************************/
+footer
+{
+  width:100vw;
+  height:25vh;
+  background:#1b5e20;
+  padding-block:0.5vh;
+
+}
+
+.fa {
+  font-size: 20px;
+  color: white;
+  text-decoration:none;
+}
+
+
+.footerTop
+{
+  height:13vh;
+  width:100vw;
+  display:grid;
+  padding-block:1vh;
+  grid-template-rows:repeat(3,1fr);
+  grid-template-areas:
+    "contactSocialMedia"
+    "footerNav"
+    "peopleFooter"
+
+    ;
+}
+
+.peopleFooter
+{
+  grid-area:peopleFooter;
+  width:20vw;
+  height:4vh;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:10px;
+  color:white;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+.footerNav {
+  grid-area:footerNav;
+ 
+  margin:auto;
+  width: 40vw;
+  height: 4vh;
+  background: #1b5e20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.footerNav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerNav ul li {
+  margin-right: 20px;
+}
+
+.footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+
+.contactSocialMedia {
+  grid-area:contactSocialMedia ;
+
+ width:20vw;
+  height:4vh;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+.footerDivider
+{
+  height:3vh;
+   width:100vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  
+}
+hr
+{
+ height:2px;
+  width:90vw;
+  background:white;
+  border:none;
+   margin:auto;
+}
+.footerBottom
+{
+  color:white;
+  height:9vh;
+   width:100vw;
+ 
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+
+/* Forum Container */
+.forum-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forum-entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.forum-input, .reply-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+.forum-submit, .reply-submit {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background: #1b5e20;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forum-submit:hover, .reply-submit:hover {
+    background: #b38825;
+}
+
+.forum-posts {
+    margin-top: 20px;
+}
+
+.forum-post {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-content {
+    margin-bottom: 20px;
+}
+
+.post-replies .reply {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
